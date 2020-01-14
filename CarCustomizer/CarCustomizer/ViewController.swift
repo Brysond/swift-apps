@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var carStatistics: UILabel!
     
     var starterCars = StarterCars()
-    var nextCar = 1
+    var nextCar = 0
     
     var car: Car? {
         didSet {
