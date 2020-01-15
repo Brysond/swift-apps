@@ -47,11 +47,6 @@
                BlueprintName = "CarCustomizerUITests"
                ReferencedContainer = "container:CarCustomizer.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "CarCustomizerUITests">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

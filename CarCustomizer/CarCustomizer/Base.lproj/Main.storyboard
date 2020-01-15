@@ -36,6 +36,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="H1H-fD-cZW">
                                 <rect key="frame" x="482" y="441" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="tiresSwitch"/>
                                 <connections>
                                     <action selector="tiresPackageToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="Udc-ns-Am2"/>
                                 </connections>
@@ -43,6 +44,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DOy-3L-RQV">
                                 <rect key="frame" x="482" y="332" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="engineAndExhaustSwitch"/>
                                 <connections>
                                     <action selector="engineAndExhaustToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="JXL-Sv-PfH"/>
                                 </connections>
