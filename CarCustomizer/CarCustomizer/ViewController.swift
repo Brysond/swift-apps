@@ -14,7 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet var tiresPackage: UISwitch!
     @IBOutlet var engineAndExhaustPackage: UISwitch!
     @IBOutlet var remainingFundsDisplay: UILabel!
+    @IBOutlet var remainingTimeDisplay: UILabel!
     
+    var timeRemaining = 30
     var remainingFunds = 999 {
         didSet {
             remainingFundsDisplay.text = "Remaining Funds: \(remainingFunds)"
@@ -30,11 +32,14 @@ class ViewController: UIViewController {
         }
     }
     
+    var timer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         car = starterCars.cars[nextCar]
-        remainingFundsDisplay.text = "Remaining Funds: \(remainingFunds)"
-        
+        resetDisplay()
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
+        remainingTimeDisplay.text = "\(timeRemaining)"
     }
     
     func resetDisplay() {
@@ -62,12 +67,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func nextCar(_ sender: Any) {
+        if timeRemaining > 0 {
         nextCar += 1
         if nextCar >= starterCars.cars.count {
             nextCar = 0
         }
         car = starterCars.cars[nextCar]
         resetDisplay()
+        }
     }
     
     @IBAction func engineAndExhaustToggle(_ sender: Any) {
@@ -86,6 +93,19 @@ class ViewController: UIViewController {
         } else {
             car?.handling -= 1
             remainingFunds += 500
+        }
+    }
+    
+    @objc func countdown() {
+        if timeRemaining > 0 {
+            timeRemaining -= 1
+            remainingTimeDisplay.text = "\(timeRemaining)"
+        } else {
+            timer?.invalidate()
+            tiresPackage.isEnabled = false
+            engineAndExhaustPackage.isEnabled = false
+            
+            
         }
     }
 
