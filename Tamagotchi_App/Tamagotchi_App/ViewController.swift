@@ -27,7 +27,10 @@ class ViewController: UIViewController {
         updateDisplay()
     }
     
-    
+    @objc func age() {
+        tamagotchi.getOlder()
+        updateDisplay()
+    }
     
     func updateDisplay() {
         tamagotchiStatsLabel.text = "\(tamagotchi.statsOutput())"
