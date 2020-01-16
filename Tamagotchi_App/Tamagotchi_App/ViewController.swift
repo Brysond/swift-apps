@@ -9,12 +9,32 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet var tamagotchiStatsLabel: UILabel!
+    
+    
+    let tamagotchi = Tamagotchi()
+    
+    var timer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        timer = Timer.scheduledTimer(timeInterval: 6.00, target: self, selector: #selector(age), userInfo: nil, repeats: true)
+        updateDisplay()
+    }
+    
+    @IBAction func eat(_ sender: Any) {
+        tamagotchi.getFatter()
+        updateDisplay()
+    }
+    
+    
+    
+    func updateDisplay() {
+        tamagotchiStatsLabel.text = "\(tamagotchi.statsOutput())"
     }
 
+    
+    
 
 }
 

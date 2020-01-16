@@ -37,7 +37,7 @@ struct TamagotchiStats {
             Hapy: \(happy)
             Hunger: \(hunger)
             Mass: \(weight)
-            
+            Discipline: \(discipline)
             """
     }
 }
