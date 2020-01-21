@@ -76,21 +76,19 @@
                             <constraint firstItem="H1H-fD-cZW" firstAttribute="top" secondItem="DOy-3L-RQV" secondAttribute="bottom" constant="8" id="589-gA-wIN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DOy-3L-RQV" secondAttribute="trailing" constant="20" id="9ot-pe-Aa7"/>
                             <constraint firstItem="2hz-Pb-6tN" firstAttribute="top" secondItem="XUl-3k-W4E" secondAttribute="bottom" constant="32" id="IPX-yZ-nLT"/>
-                            <constraint firstItem="Ggi-RU-bqd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="A6A-Ul-Ilj" secondAttribute="bottom" constant="40" id="MiM-Ii-vZG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bSk-a0-cEd" secondAttribute="trailing" constant="20" id="QBl-eu-CUk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H1H-fD-cZW" secondAttribute="trailing" constant="20" id="SD0-gX-7zn"/>
                             <constraint firstItem="A6A-Ul-Ilj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YF7-iC-Jxa"/>
-                            <constraint firstItem="XUl-3k-W4E" firstAttribute="top" secondItem="Ggi-RU-bqd" secondAttribute="bottom" constant="18" id="cY4-Gu-VgM"/>
                             <constraint firstItem="2hz-Pb-6tN" firstAttribute="top" secondItem="H1H-fD-cZW" secondAttribute="bottom" constant="27" id="hQ9-ce-f47"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2hz-Pb-6tN" secondAttribute="trailing" constant="30" id="i22-HC-McF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="izC-La-A4c" secondAttribute="bottom" constant="20" id="knk-wQ-1cU"/>
                             <constraint firstItem="bSk-a0-cEd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="l9b-cJ-Obu"/>
                             <constraint firstItem="A6A-Ul-Ilj" firstAttribute="top" secondItem="bSk-a0-cEd" secondAttribute="bottom" constant="10" id="lE0-9p-g4v"/>
+                            <constraint firstItem="Ggi-RU-bqd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="A6A-Ul-Ilj" secondAttribute="top" constant="20" id="nod-VA-lBa"/>
                             <constraint firstItem="A6A-Ul-Ilj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oSa-cJ-tnT"/>
                             <constraint firstItem="izC-La-A4c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ser-x9-0OC"/>
                             <constraint firstItem="izC-La-A4c" firstAttribute="top" relation="lessThanOrEqual" secondItem="2hz-Pb-6tN" secondAttribute="bottom" constant="518" id="sff-Nm-bTr"/>
                             <constraint firstItem="H1H-fD-cZW" firstAttribute="leading" secondItem="XUl-3k-W4E" secondAttribute="trailing" constant="120" id="tua-WW-cW8"/>
-                            <constraint firstItem="DOy-3L-RQV" firstAttribute="leading" secondItem="Ggi-RU-bqd" secondAttribute="trailing" constant="8" id="yS2-C8-H3z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
