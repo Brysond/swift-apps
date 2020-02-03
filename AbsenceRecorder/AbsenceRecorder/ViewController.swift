@@ -10,9 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var divisions: [Division] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        loadStartData()
+        for division in divisions {
+            print("Code: \(division.code), No.: \(division.students.count)")
+            for student in division.students {
+                print("\(student.forename)")
+            }
+        }
+    }
+    
+    func loadStartData() {
+        divisions.append(DivisionFactory.createDivision(code: "Division 1", of:1))
+        divisions.append(DivisionFactory.createDivision(code: "Division 2", of:2))
     }
 
 
