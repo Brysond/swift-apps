@@ -9,7 +9,7 @@
 import Foundation
 
 class DivisionFactory {
-    static func creatDivision(code: String, of size: Int) -> Division {
+    static func createDivision(code: String, of size: Int) -> Division {
         let division = Division(code:code)
         
         for i in 1...size {
