@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
 
     var divisions: [Division] = []
     
@@ -21,6 +21,10 @@ class ViewController: UIViewController {
                 print("\(student.forename)")
             }
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
     }
     
     func loadStartData() {
