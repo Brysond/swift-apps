@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UITableViewController {
 
     var divisions: [Division] = []
+    var currentDate: Date = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +22,46 @@ class ViewController: UITableViewController {
                 print("\(student.forename)")
             }
         }
+        
+        updateDateDisplay()
+    }
+    
+    func updateDateDisplay() {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        navigationItem.title = formatter.string(from: currentDate)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return divisions.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Division", for: indexPath)
+        
+        cell.textLabel?.text = divisions[indexPath.row].code
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "DivisionAbsenceViewController") as? DivisionAbsenceViewControllerTableViewController else {
+            fatalError("Failed to load Division Absence view controller from Storyboard")
+        }
+        
+        vc.division = divisions[indexPath.row]
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func nextDay(_ sender: Any) {
+        currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate) ?? Date()
+        updateDateDisplay()
+    }
+    
+    @IBAction func previousDay(_ sender: Any) {
+        currentDate = Calendar.current.date(byAdding: .day, value: -1, to: currentDate) ?? Date()
+        updateDateDisplay()
     }
     
     func loadStartData() {
