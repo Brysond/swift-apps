@@ -18,7 +18,11 @@ class DivisionAbsenceViewControllerTableViewController: UITableViewController {
         
         navigationItem.title = division?.code
         
-        
+        if let selectedRows = absence?.selectedRows {
+            for selectedRow in selectedRows {
+                tableView.selectRow(at: selectedRow, animated: false, scrollPosition: .none)
+            }
+        }
         
     }
 
@@ -52,7 +56,7 @@ class DivisionAbsenceViewControllerTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        absence?.
+        absence?.selectedRows = tableView.indexPathsForSelectedRows
     }
     
 }
