@@ -49,7 +49,12 @@ class ViewController: UITableViewController {
             fatalError("Failed to load Division Absence view controller from Storyboard")
         }
         
-        vc.division = divisions[indexPath.row]
+        let selectedDivision = divisions[indexPath.row]
+        let newAbsence = Absence(date: currentDate)
+        newAbsence.absent.append(contentsOf: selectedDivision.students)
+        selectedDivision.absences.append(newAbsence)
+        vc.absence = newAbsence
+        vc.division = selectedDivision
         
         navigationController?.pushViewController(vc, animated: true)
     }
