@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class HomeViewController: UITableViewController {
 
     var divisions: [Division] = []
     var currentDate: Date = Date()
@@ -50,10 +50,16 @@ class ViewController: UITableViewController {
         }
         
         let selectedDivision = divisions[indexPath.row]
-        let newAbsence = Absence(date: currentDate)
-        newAbsence.absent.append(contentsOf: selectedDivision.students)
-        selectedDivision.absences.append(newAbsence)
-        vc.absence = newAbsence
+        
+        if selectedDivision.hasAbsence(for:currentDate) {
+            let existingAbsence = selectedDivision.getAbsence(for:currentDate)
+        } else {
+            let newAbsence = Absence(date: currentDate)
+            newAbsence.absent.append(contentsOf: selectedDivision.students)
+            selectedDivision.absences.append(newAbsence)
+            vc.absence = newAbsence
+        }
+        
         vc.division = selectedDivision
         
         navigationController?.pushViewController(vc, animated: true)
