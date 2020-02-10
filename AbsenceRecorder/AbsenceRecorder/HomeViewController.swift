@@ -16,12 +16,6 @@ class HomeViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadStartData()
-        for division in divisions {
-            print("Code: \(division.code), No.: \(division.students.count)")
-            for student in division.students {
-                print("\(student.forename)")
-            }
-        }
         
         updateDateDisplay()
     }
@@ -51,11 +45,10 @@ class HomeViewController: UITableViewController {
         
         let selectedDivision = divisions[indexPath.row]
         
-        if selectedDivision.hasAbsence(for:currentDate) {
-            let existingAbsence = selectedDivision.getAbsence(for:currentDate)
+        if let existingAbsence = selectedDivision.getAbsence(for:currentDate) {
+            vc.absence = existingAbsence
         } else {
             let newAbsence = Absence(date: currentDate)
-            newAbsence.absent.append(contentsOf: selectedDivision.students)
             selectedDivision.absences.append(newAbsence)
             vc.absence = newAbsence
         }
