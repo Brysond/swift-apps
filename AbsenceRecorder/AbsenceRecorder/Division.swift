@@ -18,8 +18,6 @@ class Division {
     }
     
     func getAbsence(for date: Date) -> Absence? {
-        return absences.first (where: {
-            $0.takenOn == date
-        })
+        return absences.first (where: { $0.takenOn == date })
     }
 }

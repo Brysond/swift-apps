@@ -39,21 +39,21 @@ class HomeViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "DivisionAbsenceViewController") as? DivisionAbsenceViewControllerTableViewController else {
-            fatalError("Failed to load Division Absence view controller from Storyboard")
-        }
         
         let selectedDivision = divisions[indexPath.row]
         
+        var absence = Absence(date: currentDate)
         if let existingAbsence = selectedDivision.getAbsence(for:currentDate) {
-            vc.absence = existingAbsence
+            absence = existingAbsence
         } else {
-            let newAbsence = Absence(date: currentDate)
-            selectedDivision.absences.append(newAbsence)
-            vc.absence = newAbsence
+            selectedDivision.absences.append(absence)
         }
         
-        vc.division = selectedDivision
+        guard let vc = storyboard?.instantiateViewController(identifier: "DivisionAbsenceViewController", creator: { coder in
+            return DivisionAbsenceViewController(coder: coder, division: selectedDivision, absence: absence)
+        }) else {
+            fatalError("Failed to load Division Absence view controller from Storyboard")
+        }
         
         navigationController?.pushViewController(vc, animated: true)
     }
