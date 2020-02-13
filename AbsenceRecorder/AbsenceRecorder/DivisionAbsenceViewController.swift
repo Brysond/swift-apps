@@ -64,8 +64,4 @@ class DivisionAbsenceViewController: UITableViewController {
         }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        absence.selectedRows = tableView.indexPathsForSelectedRows
-    }
-    
 }

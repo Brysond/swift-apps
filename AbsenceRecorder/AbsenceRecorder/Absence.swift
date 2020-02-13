@@ -15,4 +15,9 @@ class Absence {
     init(date: Date) {
         takenOn = date
     }
+    
+    init(date:Date, present: [Student]) {
+        takenOn = date
+        self.present = present
+    }
 }
