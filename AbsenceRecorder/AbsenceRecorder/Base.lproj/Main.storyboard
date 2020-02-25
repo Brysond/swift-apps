@@ -35,6 +35,7 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
+                            <outlet property="Cell" destination="5hl-IO-VGI" id="ng4-Gw-3YV"/>
                             <outlet property="dataSource" destination="USM-eb-It3" id="Wri-Qe-d41"/>
                             <outlet property="delegate" destination="USM-eb-It3" id="O1c-5Q-aXi"/>
                         </connections>
