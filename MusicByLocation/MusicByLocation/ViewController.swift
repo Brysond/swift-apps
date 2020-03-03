@@ -9,6 +9,18 @@
 import UIKit
 import CoreLocation
 
+
+/*
+ - Outlet
+ - Action
+ - Requesting location
+ - Acting as the location manager delegate (failure, location update events)
+ - Making geocoder lookups
+ - Web requests
+ - Parsing json
+ - Tweaking response to get artist names
+ */
+
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
@@ -45,11 +57,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         musicRecommendations.text = "Could not access user's locaton. Error: \(error.localizedDescription)"
     }
     
-    func getArtists() -> String {
+    func getArtists() {
         guard let url = URL(string: "https://itunes.apple.com/search?term=\(self.locationKeyword)&entity=musicArtist")
             else {
                 print("Invalid URL")
-                return "Invalid URL. Wasn't able to search iTunes"
+                return
         }
         
         let request = URLRequest(url: url)
@@ -67,7 +79,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 }
             }
         }.resume()
-        return ""
     }
     
     func parseJson(json: Data) -> ArtistResponse? {

@@ -61,6 +61,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>A Russian Spy wants your location. Give it</string>
+	<string>Your location is needed for this app to find music suggestions.</string>
 </dict>
 </plist>
