@@ -13,13 +13,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
-    
+    var locationKeyword = ""
     @IBOutlet var musicRecommendations: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
+        getArtists()
     }
 
 
@@ -33,14 +34,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 if error != nil {
                     self.musicRecommendations.text = "Could not perform lookup of location for latitude: \(firstLocation.coordinate.latitude.description)"
                 } else {
-                    self.musicRecommendations.text = """
-                    City: \(placemarks?[0].locality ?? "No City Found")
-                    County: \(placemarks?[0].subAdministrativeArea ?? "No County found")
-                    State/Province: \(placemarks?[0].administrativeArea ?? "No State or Province found")
-                    Country: \(placemarks?[0].country ?? "No Country Found")
-                    Country Code: \(placemarks?[0].isoCountryCode ?? "No country code found")
-                    Nearby landmarks: \(placemarks?[0].areasOfInterest ?? ["This location is distinctly un-interesting"])
-                    """
+                    self.locationKeyword = placemarks?[0].country?.replacingOccurrences(of: " ", with: "%2") ?? "united"
                 }
             })
             
@@ -52,7 +46,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func getArtists() -> String {
-        guard let url = URL(string: "https://itunes.apple.com/search?term=Lionel%20Richie&entity=musicArtist")
+        guard let url = URL(string: "https://itunes.apple.com/search?term=\(self.locationKeyword)&entity=musicArtist")
             else {
                 print("Invalid URL")
                 return "Invalid URL. Wasn't able to search iTunes"
@@ -62,10 +56,30 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         URLSession.shared.dataTask(with: request) { (data,response,error) in
             if let data = data {
-                print(String(decoding:data, as: UTF8.self))
+                if let response = self.parseJson(json: data) {
+                    let names = response.results.map {
+                        return $0.artistName
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.musicRecommendations.text = names.joined(separator:", ")
+                    }
+                }
             }
         }.resume()
         return ""
+    }
+    
+    func parseJson(json: Data) -> ArtistResponse? {
+        let decoder = JSONDecoder()
+
+        if let artistResponse = try? decoder.decode(ArtistResponse.self, from: json) {
+            return artistResponse
+        } else {
+            print("Failed to decode to artist response")
+            return nil
+        }
+        
     }
     
 }
