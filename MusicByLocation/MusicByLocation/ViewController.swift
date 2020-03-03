@@ -20,7 +20,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
-        getArtists()
     }
 
 
@@ -34,7 +33,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 if error != nil {
                     self.musicRecommendations.text = "Could not perform lookup of location for latitude: \(firstLocation.coordinate.latitude.description)"
                 } else {
-                    self.locationKeyword = placemarks?[0].country?.replacingOccurrences(of: " ", with: "%2") ?? "united"
+                    self.locationKeyword = placemarks?[0].country?.replacingOccurrences(of: " ", with: "%20") ?? "united"
+                    self.getArtists()
                 }
             })
             
