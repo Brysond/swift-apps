@@ -17,7 +17,7 @@ class ITunesAdaptor {
             print("No search term provided, terminating request.")
             return }
         
-        let path = "/term\(search)&entity=musicArtist".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let path = "/term=\(search)&entity=musicArtist".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: baseUrl + path) else {
                 print("Invalid URL")

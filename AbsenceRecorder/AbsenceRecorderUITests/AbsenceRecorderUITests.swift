@@ -23,13 +23,21 @@ class AbsenceRecorderUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testWhenRecordingAnAbsenceStudentsRemainSelected() {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let tablesQuery = app.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Division 1"]/*[[".cells.staticTexts[\"Division 1\"]",".staticTexts[\"Division 1\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Jones"]/*[[".cells.staticTexts[\"Jones\"]",".staticTexts[\"Jones\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Gray"]/*[[".cells.staticTexts[\"Gray\"]",".staticTexts[\"Gray\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Brown"]/*[[".cells.staticTexts[\"Brown\"]",".staticTexts[\"Brown\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["Division 1"].buttons["Mar 9, 2020"].tap()
+        
+        let divisionCell = tablesQuery.cells.element(boundBy: 0)
+        let divisionCellNoAbsence = tablesQuery.cells.element(boundBy: 1)
+        XCTAssertEqual(divisionCell.isSelected, true)
+        XCTAssertEqual(divisionCellNoAbsence.isSelected, false)
     }
 
     func testLaunchPerformance() {

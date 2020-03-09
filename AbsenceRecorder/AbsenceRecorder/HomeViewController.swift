@@ -20,6 +20,10 @@ class HomeViewController: UITableViewController {
         updateDateDisplay()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     func updateDateDisplay() {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -34,6 +38,7 @@ class HomeViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Division", for: indexPath)
         
         cell.textLabel?.text = divisions[indexPath.row].code
+        cell.accessoryType = divisions[indexPath.row].getAbsence(for: currentDate) == nil ? . none : .checkmark
         
         return cell
     }
@@ -82,6 +87,28 @@ class HomeViewController: UITableViewController {
     @IBAction func previousDay(_ sender: Any) {
         currentDate = Calendar.current.date(byAdding: .day, value: -1, to: currentDate) ?? Date()
         updateDateDisplay()
+    }
+    
+    func convertDivisionsToJson() -> String? {
+        let encoder = JSONEncoder()
+        guard let encoded =  try? encoder.encode(divisions) else {
+            print("Unable to encode divisions into json")
+            return nil
+        }
+        guard let json = String(data: encoded, encoding: .utf8) else {
+            print("Unable to turn encoded divisions into a string")
+            return nil
+        }
+        return json
+    }
+    
+    func convertJsonToDivisions(json: Data) -> [Division]? {
+        let decoder = JSONDecoder()
+        
+        guard let decoded = try? decoder.decode([Division].self, from: json) else {
+            return nil111111111111111111111111111111111
+        }
+        return decoded
     }
     
     func loadStartData() {
