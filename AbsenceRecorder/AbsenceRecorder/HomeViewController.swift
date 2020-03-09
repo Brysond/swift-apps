@@ -106,7 +106,7 @@ class HomeViewController: UITableViewController {
         let decoder = JSONDecoder()
         
         guard let decoded = try? decoder.decode([Division].self, from: json) else {
-            return nil111111111111111111111111111111111
+            return nil
         }
         return decoded
     }
