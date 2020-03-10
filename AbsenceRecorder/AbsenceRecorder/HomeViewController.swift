@@ -15,7 +15,6 @@ class HomeViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadStartData()
         
         updateDateDisplay()
     }
@@ -109,6 +108,33 @@ class HomeViewController: UITableViewController {
             return nil
         }
         return decoded
+    }
+    
+    func saveDataToFile() {
+        guard let divisionsJson = convertDivisionsToJson() else {
+            return
+        }
+        
+        let  filePath = UserDocumentManager.getDocumentsDirectory().appendingPathComponent("divisions.txt")
+        
+        do {
+            try divisionsJson.write(to:filePath, atomically: true, encoding: String.Encoding.utf8)
+        } catch {
+            print("Unable to save by writing to file")
+        }
+        
+    }
+    
+    func loadDataFromFile() {
+        let  filePath = UserDocumentManager.getDocumentsDirectory().appendingPathComponent("divisions.txt")
+        
+        do {
+            let json = try Data(contentsOf:  filePath)
+            divisions = convertJsonToDivisions(json:json) ?? []
+        } catch {
+            print("Failed to read from file")
+            loadStartData()
+        }
     }
     
     func loadStartData() {
