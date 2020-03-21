@@ -40,8 +40,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         content.title = "Test notification"
         content.body = "Lorem ipsum whatsit whatsit"
         content.categoryIdentifier = "alarm"
-        content.userInfo = ["test":"don't know what this does yet"]
-        content.sound = .default
+        content.userInfo = ["customData":"don't know what this does yet"]
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "morseCode.caf"))
         
         
         
@@ -67,9 +67,29 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         center.setNotificationCategories([category])
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didRecieve response:UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response:UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
         
-        if let customData = user
+        if let customData = userInfo["customData"] as? String {
+            print("Custom data recoeved: \(customData)")
+            
+            switch response.actionIdentifier {
+            case UNNotificationDefaultActionIdentifier:
+                // the user swiped to unlock
+                
+                print("The default")
+            
+            case "test_one":
+                print("This is the first test case")
+            
+            case "test_two":
+                print("This is the second test case")
+                
+            default:
+                break
+            }
+        }
+        
+        completionHandler()
     }
 }
