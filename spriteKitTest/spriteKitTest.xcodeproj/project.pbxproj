@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F4F468E2428DD0800A14CA3 /* FireParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6F4F468D2428DD0800A14CA3 /* FireParticles.sks */; };
 		6F5265B92427942D008B61F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5265B82427942D008B61F8 /* AppDelegate.swift */; };
 		6F5265BB2427942D008B61F8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6F5265BA2427942D008B61F8 /* GameScene.sks */; };
 		6F5265BF2427942D008B61F8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5265BE2427942D008B61F8 /* GameScene.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F4F468D2428DD0800A14CA3 /* FireParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = FireParticles.sks; path = "../../../../Downloads/HackingWithSwift-master/Classic/project11-files/Content/FireParticles.sks"; sourceTree = "<group>"; };
 		6F5265B52427942D008B61F8 /* spriteKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spriteKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F5265B82427942D008B61F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F5265BA2427942D008B61F8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				6F5265C52427942E008B61F8 /* Assets.xcassets */,
 				6F5265C72427942E008B61F8 /* LaunchScreen.storyboard */,
 				6F5265CA2427942E008B61F8 /* Info.plist */,
+				6F4F468D2428DD0800A14CA3 /* FireParticles.sks */,
 			);
 			path = spriteKitTest;
 			sourceTree = "<group>";
@@ -130,6 +133,7 @@
 			files = (
 				6F5265C42427942D008B61F8 /* Main.storyboard in Resources */,
 				6F5265BB2427942D008B61F8 /* GameScene.sks in Resources */,
+				6F4F468E2428DD0800A14CA3 /* FireParticles.sks in Resources */,
 				6F5265C62427942E008B61F8 /* Assets.xcassets in Resources */,
 				6F5265C92427942E008B61F8 /* LaunchScreen.storyboard in Resources */,
 			);
