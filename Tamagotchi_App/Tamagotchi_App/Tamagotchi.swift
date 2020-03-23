@@ -15,6 +15,24 @@ class Tamagotchi {
     var hunger = 0
     var weight = 5
     var discipline = 0
+    var health = 10
+    var excrementOnScreen = false
+    
+    func excrement() -> Bool {
+        let randomInt = Int.random(in: 1...10)
+        if randomInt == 5 {
+            excrementOnScreen = true
+        }
+        return excrementOnScreen
+    }
+    
+    func getLessHealthy() {
+        health -= 1
+    }
+    
+    func getHealthier() {
+        health += 1
+    }
     
     func getOlder() {
         age += 1
@@ -36,8 +54,8 @@ class Tamagotchi {
         hunger -= 1
     }
     
-    func getFatter() {
-        weight += 1
+    func getFatter(increase:Int) {
+        weight += increase
     }
     
     func getLighter() {
@@ -52,6 +70,7 @@ class Tamagotchi {
             Hunger: \(hunger)
             Weight: \(weight)
             Discipline: \(discipline)
+            Health: \(health)
             """
         
     }

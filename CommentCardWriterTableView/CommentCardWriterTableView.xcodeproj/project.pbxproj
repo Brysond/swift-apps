@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6FED8C6D240E689900D1A49E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FED8C6C240E689900D1A49E /* AppDelegate.swift */; };
+		6FED8C6F240E689900D1A49E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FED8C6E240E689900D1A49E /* SceneDelegate.swift */; };
+		6FED8C71240E689900D1A49E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FED8C70240E689900D1A49E /* ViewController.swift */; };
+		6FED8C74240E689900D1A49E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FED8C72240E689900D1A49E /* Main.storyboard */; };
+		6FED8C76240E689B00D1A49E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FED8C75240E689B00D1A49E /* Assets.xcassets */; };
+		6FED8C79240E689B00D1A49E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FED8C77240E689B00D1A49E /* LaunchScreen.storyboard */; };
+		6FED8C84240E689B00D1A49E /* CommentCardWriterTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FED8C83240E689B00D1A49E /* CommentCardWriterTableViewTests.swift */; };
+		6FED8C8F240E689B00D1A49E /* CommentCardWriterTableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FED8C8E240E689B00D1A49E /* CommentCardWriterTableViewUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6FED8C80240E689B00D1A49E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FED8C61240E689900D1A49E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FED8C68240E689900D1A49E;
+			remoteInfo = CommentCardWriterTableView;
+		};
+		6FED8C8B240E689B00D1A49E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FED8C61240E689900D1A49E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FED8C68240E689900D1A49E;
+			remoteInfo = CommentCardWriterTableView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6FED8C69240E689900D1A49E /* CommentCardWriterTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommentCardWriterTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FED8C6C240E689900D1A49E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6FED8C6E240E689900D1A49E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6FED8C70240E689900D1A49E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6FED8C73240E689900D1A49E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6FED8C75240E689B00D1A49E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6FED8C78240E689B00D1A49E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6FED8C7A240E689B00D1A49E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FED8C7F240E689B00D1A49E /* CommentCardWriterTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommentCardWriterTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FED8C83240E689B00D1A49E /* CommentCardWriterTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCardWriterTableViewTests.swift; sourceTree = "<group>"; };
+		6FED8C85240E689B00D1A49E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FED8C8A240E689B00D1A49E /* CommentCardWriterTableViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommentCardWriterTableViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FED8C8E240E689B00D1A49E /* CommentCardWriterTableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCardWriterTableViewUITests.swift; sourceTree = "<group>"; };
+		6FED8C90240E689B00D1A49E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6FED8C66240E689900D1A49E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FED8C7C240E689B00D1A49E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FED8C87240E689B00D1A49E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6FED8C60240E689900D1A49E = {
+			isa = PBXGroup;
+			children = (
+				6FED8C6B240E689900D1A49E /* CommentCardWriterTableView */,
+				6FED8C82240E689B00D1A49E /* CommentCardWriterTableViewTests */,
+				6FED8C8D240E689B00D1A49E /* CommentCardWriterTableViewUITests */,
+				6FED8C6A240E689900D1A49E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6FED8C6A240E689900D1A49E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6FED8C69240E689900D1A49E /* CommentCardWriterTableView.app */,
+				6FED8C7F240E689B00D1A49E /* CommentCardWriterTableViewTests.xctest */,
+				6FED8C8A240E689B00D1A49E /* CommentCardWriterTableViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6FED8C6B240E689900D1A49E /* CommentCardWriterTableView */ = {
+			isa = PBXGroup;
+			children = (
+				6FED8C6C240E689900D1A49E /* AppDelegate.swift */,
+				6FED8C6E240E689900D1A49E /* SceneDelegate.swift */,
+				6FED8C70240E689900D1A49E /* ViewController.swift */,
+				6FED8C72240E689900D1A49E /* Main.storyboard */,
+				6FED8C75240E689B00D1A49E /* Assets.xcassets */,
+				6FED8C77240E689B00D1A49E /* LaunchScreen.storyboard */,
+				6FED8C7A240E689B00D1A49E /* Info.plist */,
+			);
+			path = CommentCardWriterTableView;
+			sourceTree = "<group>";
+		};
+		6FED8C82240E689B00D1A49E /* CommentCardWriterTableViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				6FED8C83240E689B00D1A49E /* CommentCardWriterTableViewTests.swift */,
+				6FED8C85240E689B00D1A49E /* Info.plist */,
+			);
+			path = CommentCardWriterTableViewTests;
+			sourceTree = "<group>";
+		};
+		6FED8C8D240E689B00D1A49E /* CommentCardWriterTableViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6FED8C8E240E689B00D1A49E /* CommentCardWriterTableViewUITests.swift */,
+				6FED8C90240E689B00D1A49E /* Info.plist */,
+			);
+			path = CommentCardWriterTableViewUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6FED8C68240E689900D1A49E /* CommentCardWriterTableView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FED8C93240E689B00D1A49E /* Build configuration list for PBXNativeTarget "CommentCardWriterTableView" */;
+			buildPhases = (
+				6FED8C65240E689900D1A49E /* Sources */,
+				6FED8C66240E689900D1A49E /* Frameworks */,
+				6FED8C67240E689900D1A49E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CommentCardWriterTableView;
+			productName = CommentCardWriterTableView;
+			productReference = 6FED8C69240E689900D1A49E /* CommentCardWriterTableView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6FED8C7E240E689B00D1A49E /* CommentCardWriterTableViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FED8C96240E689B00D1A49E /* Build configuration list for PBXNativeTarget "CommentCardWriterTableViewTests" */;
+			buildPhases = (
+				6FED8C7B240E689B00D1A49E /* Sources */,
+				6FED8C7C240E689B00D1A49E /* Frameworks */,
+				6FED8C7D240E689B00D1A49E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6FED8C81240E689B00D1A49E /* PBXTargetDependency */,
+			);
+			name = CommentCardWriterTableViewTests;
+			productName = CommentCardWriterTableViewTests;
+			productReference = 6FED8C7F240E689B00D1A49E /* CommentCardWriterTableViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6FED8C89240E689B00D1A49E /* CommentCardWriterTableViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FED8C99240E689B00D1A49E /* Build configuration list for PBXNativeTarget "CommentCardWriterTableViewUITests" */;
+			buildPhases = (
+				6FED8C86240E689B00D1A49E /* Sources */,
+				6FED8C87240E689B00D1A49E /* Frameworks */,
+				6FED8C88240E689B00D1A49E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6FED8C8C240E689B00D1A49E /* PBXTargetDependency */,
+			);
+			name = CommentCardWriterTableViewUITests;
+			productName = CommentCardWriterTableViewUITests;
+			productReference = 6FED8C8A240E689B00D1A49E /* CommentCardWriterTableViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6FED8C61240E689900D1A49E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "David Bryson";
+				TargetAttributes = {
+					6FED8C68240E689900D1A49E = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					6FED8C7E240E689B00D1A49E = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 6FED8C68240E689900D1A49E;
+					};
+					6FED8C89240E689B00D1A49E = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 6FED8C68240E689900D1A49E;
+					};
+				};
+			};
+			buildConfigurationList = 6FED8C64240E689900D1A49E /* Build configuration list for PBXProject "CommentCardWriterTableView" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6FED8C60240E689900D1A49E;
+			productRefGroup = 6FED8C6A240E689900D1A49E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6FED8C68240E689900D1A49E /* CommentCardWriterTableView */,
+				6FED8C7E240E689B00D1A49E /* CommentCardWriterTableViewTests */,
+				6FED8C89240E689B00D1A49E /* CommentCardWriterTableViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6FED8C67240E689900D1A49E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FED8C79240E689B00D1A49E /* LaunchScreen.storyboard in Resources */,
+				6FED8C76240E689B00D1A49E /* Assets.xcassets in Resources */,
+				6FED8C74240E689900D1A49E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FED8C7D240E689B00D1A49E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FED8C88240E689B00D1A49E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6FED8C65240E689900D1A49E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FED8C71240E689900D1A49E /* ViewController.swift in Sources */,
+				6FED8C6D240E689900D1A49E /* AppDelegate.swift in Sources */,
+				6FED8C6F240E689900D1A49E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FED8C7B240E689B00D1A49E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FED8C84240E689B00D1A49E /* CommentCardWriterTableViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FED8C86240E689B00D1A49E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FED8C8F240E689B00D1A49E /* CommentCardWriterTableViewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6FED8C81240E689B00D1A49E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6FED8C68240E689900D1A49E /* CommentCardWriterTableView */;
+			targetProxy = 6FED8C80240E689B00D1A49E /* PBXContainerItemProxy */;
+		};
+		6FED8C8C240E689B00D1A49E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6FED8C68240E689900D1A49E /* CommentCardWriterTableView */;
+			targetProxy = 6FED8C8B240E689B00D1A49E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6FED8C72240E689900D1A49E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FED8C73240E689900D1A49E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6FED8C77240E689B00D1A49E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FED8C78240E689B00D1A49E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6FED8C91240E689B00D1A49E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6FED8C92240E689B00D1A49E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6FED8C94240E689B00D1A49E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CommentCardWriterTableView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.brysond.CommentCardWriterTableView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6FED8C95240E689B00D1A49E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CommentCardWriterTableView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.brysond.CommentCardWriterTableView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6FED8C97240E689B00D1A49E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CommentCardWriterTableViewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.brysond.CommentCardWriterTableViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CommentCardWriterTableView.app/CommentCardWriterTableView";
+			};
+			name = Debug;
+		};
+		6FED8C98240E689B00D1A49E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CommentCardWriterTableViewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.brysond.CommentCardWriterTableViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CommentCardWriterTableView.app/CommentCardWriterTableView";
+			};
+			name = Release;
+		};
+		6FED8C9A240E689B00D1A49E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CommentCardWriterTableViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.brysond.CommentCardWriterTableViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CommentCardWriterTableView;
+			};
+			name = Debug;
+		};
+		6FED8C9B240E689B00D1A49E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CommentCardWriterTableViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.brysond.CommentCardWriterTableViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CommentCardWriterTableView;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6FED8C64240E689900D1A49E /* Build configuration list for PBXProject "CommentCardWriterTableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FED8C91240E689B00D1A49E /* Debug */,
+				6FED8C92240E689B00D1A49E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FED8C93240E689B00D1A49E /* Build configuration list for PBXNativeTarget "CommentCardWriterTableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FED8C94240E689B00D1A49E /* Debug */,
+				6FED8C95240E689B00D1A49E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FED8C96240E689B00D1A49E /* Build configuration list for PBXNativeTarget "CommentCardWriterTableViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FED8C97240E689B00D1A49E /* Debug */,
+				6FED8C98240E689B00D1A49E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FED8C99240E689B00D1A49E /* Build configuration list for PBXNativeTarget "CommentCardWriterTableViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FED8C9A240E689B00D1A49E /* Debug */,
+				6FED8C9B240E689B00D1A49E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6FED8C61240E689900D1A49E /* Project object */;
+}
