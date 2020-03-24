@@ -19,6 +19,13 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         // Do any additional setup after loading the view.
     }
     
+    //This code detects shakes of the device
+    var shakeCount = 0
+    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        shakeCount += 1
+        print(shakeCount)
+    }
+    
     @objc func registerLocal() {
         let center = UNUserNotificationCenter.current()
         
@@ -46,10 +53,10 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         
         
         var dateComponents = DateComponents()
-        dateComponents.hour = 15
-        dateComponents.minute = 54
-        //let trigger = UNCalendarNotificationTrigger(dateMatching:dateComponents, repeats: true)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        dateComponents.hour = 19
+        dateComponents.minute = 17
+        let trigger = UNCalendarNotificationTrigger(dateMatching:dateComponents, repeats: true)
+        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         center.add(request)
