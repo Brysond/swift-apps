@@ -28,6 +28,8 @@
 		6F284343242F5E3900AA5C48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F284345242F5E3900AA5C48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F28434B242F5EEA00AA5C48 /* BuildingNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingNode.swift; sourceTree = "<group>"; };
+		6F28434D242FFE4D00AA5C48 /* hitPlayer.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = hitPlayer.sks; path = "../../../../Downloads/HackingWithSwift-master/Classic/project29-files/Content/hitPlayer.sks"; sourceTree = "<group>"; };
+		6F28434E242FFE4D00AA5C48 /* hitBuilding.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = hitBuilding.sks; path = "../../../../Downloads/HackingWithSwift-master/Classic/project29-files/Content/hitBuilding.sks"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,8 @@
 				6F284340242F5E3900AA5C48 /* Assets.xcassets */,
 				6F284342242F5E3900AA5C48 /* LaunchScreen.storyboard */,
 				6F284345242F5E3900AA5C48 /* Info.plist */,
+				6F28434E242FFE4D00AA5C48 /* hitBuilding.sks */,
+				6F28434D242FFE4D00AA5C48 /* hitPlayer.sks */,
 			);
 			path = ExplodingMonkeys;
 			sourceTree = "<group>";

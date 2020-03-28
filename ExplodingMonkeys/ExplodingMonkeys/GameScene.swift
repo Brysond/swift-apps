@@ -26,6 +26,7 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         backgroundColor = UIColor(hue: 0.669, saturation: 0.99, brightness: 0.67, alpha: 1)
         createBuildings()
+        createPlayers()
     }
     
     func createBuildings() {
@@ -45,6 +46,22 @@ class GameScene: SKScene {
     }
     
     func launch(angle: Int, velocity: Int) {
+        let speed = Double(velocity) / 10
+        let radians = deg2rad(degrees: angle)
+        
+        if banana != nil {
+            banana.removeFromParent()
+            banana = nil
+        }
+        
+        banana = SKSpriteNode(imageNamed: "banana")
+        banana.name = "banana"
+        banana.physicsBody = SKPhysicsBody(circleOfRadius: banana.size.width / 2)
+        banana.physicsBody?.categoryBitMask = CollisionTypes.banana.rawValue
+        banana.physicsBody?.collisionBitMask = CollisionTypes.building.rawValue | CollisionTypes.player.rawValue
+        banana.physicsBody?.contactTestBitMask = CollisionTypes.building.rawValue | CollisionTypes.player.rawValue
+        banana.physicsBody?.usesPreciseCollisionDetection = true
+        addChild(banana)
         
     }
     
@@ -72,5 +89,9 @@ class GameScene: SKScene {
         let player2Building = buildings[buildings.count - 2]
         player2.position = CGPoint(x: player2Building.position.x, y: player2Building.position.y + ((player2Building.size.height + player2.size.height) / 2))
         addChild(player2)
+    }
+    
+    func deg2rad(degrees: Int) -> Double {
+        return Double(degrees) * .pi / 180
     }
 }
