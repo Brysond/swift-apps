@@ -81,7 +81,7 @@ class GameViewController: UIViewController {
         currentGame?.launch(angle: Int(angleSlider.value), velocity: Int(velocitySlider.value))
     }
     
-    func activatePlater(number: Int) {
+    func activatePlayer(number: Int) {
         if number == 1 {
             playerNumber.text = "<<< PLAYER ONE"
         } else {
