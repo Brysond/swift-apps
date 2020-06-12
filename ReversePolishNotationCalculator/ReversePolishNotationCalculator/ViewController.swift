@@ -187,8 +187,12 @@ class ViewController: UIViewController {
                     calculationProblem(problem: "You tried to divide by 0")
                 } else {
                     let firstNumber = Int(calculationStack.popLast()!)!
+                    if firstNumber % secondNumber != 0 {
+                        calculationProblem(problem: "Non-integer division is not supported")
+                    } else {
                     let calculatedNumber = firstNumber * secondNumber
                     calculationStack.append(String(calculatedNumber))
+                    }
                 }
             }
         } else {
@@ -205,6 +209,7 @@ class ViewController: UIViewController {
         currentInput = ""
         reloadDisplay()
         enterButton.isEnabled = false
+        evalButton.isEnabled = false
     }
     
 }
