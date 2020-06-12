@@ -12,8 +12,10 @@ class ViewController: UIViewController {
 
     @IBOutlet var outputDisplay: UILabel!
     @IBOutlet var enterButton: UIButton!
+    @IBOutlet var evalButton: UIButton!
     
     var outputStack:[String] = []
+    var calculationStack:[String] = []
     var currentInput = ""
     
     override func viewDidLoad() {
@@ -75,6 +77,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clear(_ sender: Any) {
         outputStack = []
+        calculationStack = []
         currentInput = ""
         reloadDisplay()
         enterButton.isEnabled = false
@@ -86,28 +89,36 @@ class ViewController: UIViewController {
         reloadDisplay()
     }
     @IBAction func plus(_ sender: Any) {
-        addToStack()
         outputStack.append("+")
+        calculationStack.append("+")
+        calculate()
         reloadDisplay()
         enterButton.isEnabled = false
+        evalButton.isEnabled = true
     }
     @IBAction func minus(_ sender: Any) {
-        addToStack()
         outputStack.append("-")
+        calculationStack.append("-")
+        calculate()
         reloadDisplay()
         enterButton.isEnabled = false
+        evalButton.isEnabled = true
     }
     @IBAction func times(_ sender: Any) {
-        addToStack()
         outputStack.append("*")
+        calculationStack.append("*")
+        calculate()
         reloadDisplay()
         enterButton.isEnabled = false
+        evalButton.isEnabled = true
     }
     @IBAction func divide(_ sender: Any) {
-        addToStack()
         outputStack.append("/")
+        calculationStack.append("/")
+        calculate()
         reloadDisplay()
         enterButton.isEnabled = false
+        evalButton.isEnabled = true
     }
     
     @IBAction func enter(_ sender: Any) {
@@ -122,9 +133,14 @@ class ViewController: UIViewController {
         reloadDisplay()
         enterButton.isEnabled = false
     }
+    @IBAction func eval(_ sender: Any) {
+        evalButton.isEnabled = false
+        outputDisplay.text = String(calculationStack[0])
+    }
     
     func addToStack() {
         outputStack.append(String(Int(currentInput)!))
+        calculationStack.append(String(Int(currentInput)!))
         currentInput = ""
     }
     
@@ -139,6 +155,57 @@ class ViewController: UIViewController {
     func initialise() {
         outputDisplay.text = ""
         enterButton.isEnabled = false
+        evalButton.isEnabled = false
     }
+    
+    func calculate() {
+        if calculationStack.count > 2 {
+            if calculationStack[calculationStack.count-1] == "+" {
+                calculationStack.popLast()
+                let secondNumber = Int(calculationStack.popLast()!)!
+                let firstNumber = Int(calculationStack.popLast()!)!
+                calculationStack.append(String(secondNumber + firstNumber))
+            }
+            if calculationStack[calculationStack.count-1] == "-" {
+                calculationStack.popLast()
+                let secondNumber = Int(calculationStack.popLast()!)!
+                let firstNumber = Int(calculationStack.popLast()!)!
+                let calculatedNumber = firstNumber - secondNumber
+                calculationStack.append(String(calculatedNumber))
+            }
+            if calculationStack[calculationStack.count-1] == "*" {
+                calculationStack.popLast()
+                let secondNumber = Int(calculationStack.popLast()!)!
+                let firstNumber = Int(calculationStack.popLast()!)!
+                let calculatedNumber = firstNumber * secondNumber
+                calculationStack.append(String(calculatedNumber))
+            }
+            if calculationStack[calculationStack.count-1] == "/" {
+                calculationStack.popLast()
+                let secondNumber = Int(calculationStack.popLast()!)!
+                if secondNumber == 0 {
+                    calculationProblem(problem: "You tried to divide by 0")
+                } else {
+                    let firstNumber = Int(calculationStack.popLast()!)!
+                    let calculatedNumber = firstNumber * secondNumber
+                    calculationStack.append(String(calculatedNumber))
+                }
+            }
+        } else {
+            calculationProblem(problem: "The input must be at least three operands long")
+        }
+    }
+        
+    func calculationProblem(problem: String) {
+        let alertController = UIAlertController(title: "Problem in calculation", message: problem, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "I understand", style: .default))
+        self.present(alertController, animated: true, completion: nil)
+        outputStack = []
+        calculationStack = []
+        currentInput = ""
+        reloadDisplay()
+        enterButton.isEnabled = false
+    }
+    
 }
 

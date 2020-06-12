@@ -35,6 +35,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Eval"/>
+                                <connections>
+                                    <action selector="eval:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mm5-Z7-uCH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nne-Oc-LmX">
                                 <rect key="frame" x="282" y="484" width="50" height="45"/>
@@ -289,6 +292,7 @@
                     </view>
                     <connections>
                         <outlet property="enterButton" destination="bep-lW-eoa" id="mYE-9A-jnH"/>
+                        <outlet property="evalButton" destination="BO6-dZ-wax" id="cFx-qq-9In"/>
                         <outlet property="outputDisplay" destination="ya9-ie-mRm" id="oLA-q4-ziV"/>
                     </connections>
                 </viewController>
