@@ -89,6 +89,7 @@ class ViewController: UIViewController {
         reloadDisplay()
     }
     @IBAction func plus(_ sender: Any) {
+        addToStack()
         outputStack.append("+")
         calculationStack.append("+")
         calculate()
@@ -97,6 +98,7 @@ class ViewController: UIViewController {
         evalButton.isEnabled = true
     }
     @IBAction func minus(_ sender: Any) {
+        addToStack()
         outputStack.append("-")
         calculationStack.append("-")
         calculate()
@@ -105,6 +107,7 @@ class ViewController: UIViewController {
         evalButton.isEnabled = true
     }
     @IBAction func times(_ sender: Any) {
+        addToStack()
         outputStack.append("*")
         calculationStack.append("*")
         calculate()
@@ -113,6 +116,7 @@ class ViewController: UIViewController {
         evalButton.isEnabled = true
     }
     @IBAction func divide(_ sender: Any) {
+        addToStack()
         outputStack.append("/")
         calculationStack.append("/")
         calculate()
@@ -139,9 +143,11 @@ class ViewController: UIViewController {
     }
     
     func addToStack() {
-        outputStack.append(String(Int(currentInput)!))
-        calculationStack.append(String(Int(currentInput)!))
-        currentInput = ""
+        if currentInput != "" {
+            outputStack.append(String(Int(currentInput)!))
+            calculationStack.append(String(Int(currentInput)!))
+            currentInput = ""
+        }
     }
     
     func reloadDisplay() {

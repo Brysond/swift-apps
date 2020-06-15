@@ -23,13 +23,58 @@ class ReversePolishNotationCalculatorUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testSimpleAdditionReturnsCorrectValue() {
         // UI tests must launch the application that they test.
+        
         let app = XCUIApplication()
         app.launch()
-
+        app.buttons["8"].tap()
+        
+        let enterButton = app.buttons["Enter"]
+        enterButton.tap()
+        app.buttons["5"].tap()
+        enterButton.tap()
+        app.buttons["+"].tap()
+        app.buttons["Eval"].tap()
+        XCTAssert(app.staticTexts["13"].exists)
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testSimpleSubtractionReturnsCorrectValue() {
+        
+        let app = XCUIApplication()
+        app.launch()
+        let twoButton = app/*@START_MENU_TOKEN@*/.buttons["Two"]/*[[".buttons[\"2\"]",".buttons[\"Two\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        twoButton.tap()
+        app.buttons["Enter"].tap()
+        twoButton.tap()
+        app/*@START_MENU_TOKEN@*/.buttons["Minus"]/*[[".buttons[\"-\"]",".buttons[\"Minus\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.buttons["Eval"].tap()
+        XCTAssert(app.staticTexts["0"].exists)
+    }
+    
+    func testThatDivisionBy0ReturnsErrorMessage() {
+        
+        let app = XCUIApplication()
+        app.launch()
+        app/*@START_MENU_TOKEN@*/.buttons["Two"]/*[[".buttons[\"2\"]",".buttons[\"Two\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.buttons["Enter"].tap()
+        app/*@START_MENU_TOKEN@*/.buttons["Zero"]/*[[".buttons[\"0\"]",".buttons[\"Zero\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.buttons["Divide"]/*[[".buttons[\"\/\"]",".buttons[\"Divide\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        XCTAssert(app.alerts["Problem in calculation"].exists)
+    }
+    
+    func testThatDivisionWithRemainderReturnsErrorMessage() {
+        
+        let app = XCUIApplication()
+        app.launch()
+        app.buttons["Seven"].tap()
+        app.buttons["+/-"].tap()
+        app.buttons["Enter"].tap()
+        app.buttons["Three"].tap()
+        app.buttons["Divide"].tap()
+        XCTAssert(app.alerts["Problem in calculation"].exists)
     }
 
     func testLaunchPerformance() {
