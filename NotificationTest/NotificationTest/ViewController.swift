@@ -52,11 +52,11 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         
         
         
-        var dateComponents = DateComponents()
-        dateComponents.hour = 19
-        dateComponents.minute = 17
-        let trigger = UNCalendarNotificationTrigger(dateMatching:dateComponents, repeats: true)
-        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        //var dateComponents = DateComponents()
+        //dateComponents.hour = 12
+        //dateComponents.minute = 38
+        //let trigger = UNCalendarNotificationTrigger(dateMatching:dateComponents, repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         center.add(request)

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F4F469024290E1700A14CA3 /* morseCode.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F4F468F24290E1700A14CA3 /* morseCode.caf */; };
 		6F5A9C90241FD300008BC51E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5A9C8F241FD300008BC51E /* AppDelegate.swift */; };
 		6F5A9C92241FD300008BC51E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5A9C91241FD300008BC51E /* SceneDelegate.swift */; };
 		6F5A9C94241FD300008BC51E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5A9C93241FD300008BC51E /* ViewController.swift */; };
@@ -36,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6F4F468F24290E1700A14CA3 /* morseCode.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = morseCode.caf; sourceTree = "<group>"; };
 		6F5A9C8C241FD300008BC51E /* NotificationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F5A9C8F241FD300008BC51E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F5A9C91241FD300008BC51E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +49,7 @@
 		6F5A9CAD241FD301008BC51E /* NotificationTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificationTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F5A9CB1241FD301008BC51E /* NotificationTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTestUITests.swift; sourceTree = "<group>"; };
 		6F5A9CB3241FD301008BC51E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FF05593259E2B1400460D1E /* morseCode.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = morseCode.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +100,8 @@
 		6F5A9C8E241FD300008BC51E /* NotificationTest */ = {
 			isa = PBXGroup;
 			children = (
-				6F4F468F24290E1700A14CA3 /* morseCode.caf */,
 				6F5A9C8F241FD300008BC51E /* AppDelegate.swift */,
+				6FF05593259E2B1400460D1E /* morseCode.caf */,
 				6F5A9C91241FD300008BC51E /* SceneDelegate.swift */,
 				6F5A9C93241FD300008BC51E /* ViewController.swift */,
 				6F5A9C95241FD300008BC51E /* Main.storyboard */,
@@ -237,7 +236,6 @@
 			files = (
 				6F5A9C9C241FD301008BC51E /* LaunchScreen.storyboard in Resources */,
 				6F5A9C99241FD301008BC51E /* Assets.xcassets in Resources */,
-				6F4F469024290E1700A14CA3 /* morseCode.caf in Resources */,
 				6F5A9C97241FD300008BC51E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
