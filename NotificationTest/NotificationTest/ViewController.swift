@@ -8,9 +8,12 @@
 
 import UserNotifications
 import UIKit
+import MobileCoreServices
+import AudioToolbox
 
 class ViewController: UIViewController, UNUserNotificationCenterDelegate {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,13 +21,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Schedule", style: .plain, target: self, action: #selector(scheduleLocal))
         // Do any additional setup after loading the view.
     }
-    
-    //This code detects shakes of the device
-    var shakeCount = 0
-    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        shakeCount += 1
-        print(shakeCount)
-    }
+
     
     @objc func registerLocal() {
         let center = UNUserNotificationCenter.current()
@@ -99,4 +96,30 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         
         completionHandler()
     }
+    
+    
+    @IBAction func importTapped(_ sender: Any) {
+        let documentPicker = UIDocumentPickerViewController(documentTypes: [String(kUTTypeAudio)], in: .import)
+        documentPicker.delegate = self
+        documentPicker.allowsMultipleSelection = false
+        documentPicker.modalPresentationStyle = .pageSheet
+        present(documentPicker, animated: true, completion: nil)
+        
+    }
 }
+
+extension ViewController: UIDocumentPickerDelegate {
+    public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard controller.documentPickerMode == .import, let url = urls.first else {
+            return
+            
+        }
+    }
+    
+    
+    
+    public func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        controller.dismiss(animated: true)
+    }
+}
+

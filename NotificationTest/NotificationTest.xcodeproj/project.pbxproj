@@ -15,6 +15,8 @@
 		6F5A9C9C241FD301008BC51E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F5A9C9A241FD301008BC51E /* LaunchScreen.storyboard */; };
 		6F5A9CA7241FD301008BC51E /* NotificationTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5A9CA6241FD301008BC51E /* NotificationTestTests.swift */; };
 		6F5A9CB2241FD301008BC51E /* NotificationTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5A9CB1241FD301008BC51E /* NotificationTestUITests.swift */; };
+		6FF0559C259E7ABB00460D1E /* ExtAudioConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF0559B259E7ABB00460D1E /* ExtAudioConverter.m */; };
+		6FF055A2259E7AD900460D1E /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF055A1259E7AD900460D1E /* libmp3lame.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,12 @@
 		6F5A9CB1241FD301008BC51E /* NotificationTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTestUITests.swift; sourceTree = "<group>"; };
 		6F5A9CB3241FD301008BC51E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FF05593259E2B1400460D1E /* morseCode.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = morseCode.caf; sourceTree = "<group>"; };
+		6FF05598259E7A9900460D1E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		6FF05599259E7AA600460D1E /* ExtAudioConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtAudioConverter.h; sourceTree = "<group>"; };
+		6FF0559A259E7ABA00460D1E /* NotificationTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotificationTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		6FF0559B259E7ABB00460D1E /* ExtAudioConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtAudioConverter.m; sourceTree = "<group>"; };
+		6FF055A0259E7AD300460D1E /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		6FF055A1259E7AD900460D1E /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FF055A2259E7AD900460D1E /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +117,12 @@
 				6F5A9C98241FD301008BC51E /* Assets.xcassets */,
 				6F5A9C9A241FD301008BC51E /* LaunchScreen.storyboard */,
 				6F5A9C9D241FD301008BC51E /* Info.plist */,
+				6FF05598259E7A9900460D1E /* AudioToolbox.framework */,
+				6FF05599259E7AA600460D1E /* ExtAudioConverter.h */,
+				6FF0559B259E7ABB00460D1E /* ExtAudioConverter.m */,
+				6FF055A1259E7AD900460D1E /* libmp3lame.a */,
+				6FF055A0259E7AD300460D1E /* lame.h */,
+				6FF0559A259E7ABA00460D1E /* NotificationTest-Bridging-Header.h */,
 			);
 			path = NotificationTest;
 			sourceTree = "<group>";
@@ -198,6 +213,7 @@
 				TargetAttributes = {
 					6F5A9C8B241FD300008BC51E = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1200;
 					};
 					6F5A9CA1241FD301008BC51E = {
 						CreatedOnToolsVersion = 11.3;
@@ -262,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F5A9C94241FD300008BC51E /* ViewController.swift in Sources */,
+				6FF0559C259E7ABB00460D1E /* ExtAudioConverter.m in Sources */,
 				6F5A9C90241FD300008BC51E /* AppDelegate.swift in Sources */,
 				6F5A9C92241FD300008BC51E /* SceneDelegate.swift in Sources */,
 			);
@@ -436,14 +453,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NotificationTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NotificationTest",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.brysond.NotificationTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NotificationTest/NotificationTest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -453,14 +477,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NotificationTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NotificationTest",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.brysond.NotificationTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NotificationTest/NotificationTest-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
