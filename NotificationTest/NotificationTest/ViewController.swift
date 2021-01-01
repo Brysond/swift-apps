@@ -9,6 +9,7 @@
 import UserNotifications
 import UIKit
 import AVFoundation
+import MobileCoreServices
 
 class ViewController: UIViewController, UNUserNotificationCenterDelegate {
 
@@ -48,8 +49,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         content.body = "Lorem ipsum whatsit whatsit"
         content.categoryIdentifier = "alarm"
         content.userInfo = ["customData":"don't know what this does yet"]
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "Didgeridoo.caf"))
-        
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "Digeridoo.caf"))
         
         
         //var dateComponents = DateComponents()
@@ -106,6 +106,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         documentPicker.delegate = self
         documentPicker.allowsMultipleSelection = false
         documentPicker.modalPresentationStyle = .pageSheet
+        documentPicker.shouldShowFileExtensions = true
         present(documentPicker, animated: true, completion: nil)
         
     }
@@ -121,15 +122,22 @@ extension ViewController: UIDocumentPickerDelegate {
         let targetURL = try! FileManager.default.soundsLibraryURL(for: filename)
 
         // copy audio file to /Library/Sounds
-        if !FileManager.default.fileExists(atPath: targetURL.path) {
-            try! FileManager.default.copyItem(at: url, to: targetURL)
+        do {
+            if FileManager.default.fileExists(atPath: targetURL.path) {
+                try FileManager.default.removeItem(at: targetURL)
+            }
+            try FileManager.default.copyItem(at: url, to: targetURL)
+        } catch {
+            print("Cannot copy item at \(url) to \(targetURL)")
+            print("boinboinboinb")
         }
         
+
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
 
-            audioPlayer = try AVAudioPlayer(contentsOf: targetURL, fileTypeHint: AVFileType.caf.rawValue)
+            audioPlayer = try AVAudioPlayer(contentsOf: targetURL)
 
             audioPlayer.play()
             print("I'm playing it")
