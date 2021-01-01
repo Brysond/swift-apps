@@ -8,11 +8,11 @@
 
 import UserNotifications
 import UIKit
-import MobileCoreServices
-import AudioToolbox
+import AVFoundation
 
 class ViewController: UIViewController, UNUserNotificationCenterDelegate {
 
+    var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Register", style: .plain, target: self, action: #selector(registerLocal))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Schedule", style: .plain, target: self, action: #selector(scheduleLocal))
         // Do any additional setup after loading the view.
+        
     }
 
     
@@ -33,6 +34,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
                 print("Was not granted")
             }
         })
+
+        
     }
     
     @objc func scheduleLocal() {
@@ -45,7 +48,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         content.body = "Lorem ipsum whatsit whatsit"
         content.categoryIdentifier = "alarm"
         content.userInfo = ["customData":"don't know what this does yet"]
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "morseCode.caf"))
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "Didgeridoo.caf"))
         
         
         
@@ -99,7 +102,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     
     @IBAction func importTapped(_ sender: Any) {
-        let documentPicker = UIDocumentPickerViewController(documentTypes: [String(kUTTypeAudio)], in: .import)
+        let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.apple.coreaudio-format"], in: .import)
         documentPicker.delegate = self
         documentPicker.allowsMultipleSelection = false
         documentPicker.modalPresentationStyle = .pageSheet
@@ -112,10 +115,30 @@ extension ViewController: UIDocumentPickerDelegate {
     public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard controller.documentPickerMode == .import, let url = urls.first else {
             return
-            
+        }
+        
+        let filename = url.lastPathComponent
+        let targetURL = try! FileManager.default.soundsLibraryURL(for: filename)
+
+        // copy audio file to /Library/Sounds
+        if !FileManager.default.fileExists(atPath: targetURL.path) {
+            try! FileManager.default.copyItem(at: url, to: targetURL)
+        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+
+            audioPlayer = try AVAudioPlayer(contentsOf: targetURL, fileTypeHint: AVFileType.caf.rawValue)
+
+            audioPlayer.play()
+            print("I'm playing it")
+
+        } catch let error {
+            print(error.localizedDescription)
+            print("failed to play")
         }
     }
-    
     
     
     public func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
@@ -123,3 +146,14 @@ extension ViewController: UIDocumentPickerDelegate {
     }
 }
 
+extension FileManager {
+
+    func soundsLibraryURL(for filename: String) throws -> URL {
+        let libraryURL = try url(for: .libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let soundFolderURL = libraryURL.appendingPathComponent("Sounds", isDirectory: true)
+        if !fileExists(atPath: soundFolderURL.path) {
+            try createDirectory(at: soundFolderURL, withIntermediateDirectories: true)
+        }
+        return soundFolderURL.appendingPathComponent(filename, isDirectory: false)
+    }
+}
