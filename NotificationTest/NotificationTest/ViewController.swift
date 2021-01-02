@@ -144,7 +144,7 @@ extension ViewController: UIDocumentPickerDelegate {
 
         } catch let error {
             print(error.localizedDescription)
-            print("failed to play")
+            print("Failed to play")
         }
     }
     
