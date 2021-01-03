@@ -12,7 +12,7 @@ import AVFoundation
 import MobileCoreServices
 
 class ViewController: UIViewController, UNUserNotificationCenterDelegate {
-
+    var nameOfAudioFile = ""
     var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @objc func scheduleLocal() {
         registerCategories()
-        
+        audioPlayer.stop()
         let center = UNUserNotificationCenter.current()
         
         let content = UNMutableNotificationContent()
@@ -49,7 +49,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         content.body = "Lorem ipsum whatsit whatsit"
         content.categoryIdentifier = "alarm"
         content.userInfo = ["customData":"don't know what this does yet"]
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "Digeridoo.caf"))
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: nameOfAudioFile))
         
         
         //var dateComponents = DateComponents()
@@ -119,6 +119,7 @@ extension ViewController: UIDocumentPickerDelegate {
         }
         
         let filename = url.lastPathComponent
+        nameOfAudioFile = filename
         let targetURL = try! FileManager.default.soundsLibraryURL(for: filename)
 
         // copy audio file to /Library/Sounds
