@@ -114,15 +114,13 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
 
 extension ViewController: UIDocumentPickerDelegate {
     public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        guard controller.documentPickerMode == .import, let url = urls.first else {
-            return
-        }
+        
+        guard controller.documentPickerMode == .import, let url = urls.first else { return }
         
         let filename = url.lastPathComponent
-        nameOfAudioFile = filename
         let targetURL = try! FileManager.default.soundsLibraryURL(for: filename)
 
-        // copy audio file to /Library/Sounds
+        // Copy audio file to /Library/Sounds
         do {
             if FileManager.default.fileExists(atPath: targetURL.path) {
                 try FileManager.default.removeItem(at: targetURL)
@@ -130,10 +128,11 @@ extension ViewController: UIDocumentPickerDelegate {
             try FileManager.default.copyItem(at: url, to: targetURL)
         } catch {
             print("Cannot copy item at \(url) to \(targetURL)")
-            print("boingboingboing")
         }
         
-
+        
+        nameOfAudioFile = filename
+        
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
